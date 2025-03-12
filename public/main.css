@@ -1,0 +1,97 @@
+
+html, body {
+    padding: 0;
+    margin: 0;
+    background-color: lightsteelblue;
+    background-color: #151E27;
+}
+
+main {
+    margin-top: 5ch;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    max-width: 80ch;
+    width: 80ch;
+    padding: 2ch 5ch;
+    border-radius: 5ch;
+    border: 5px solid black;
+}
+
+h1 {
+    text-align: center;
+}
+
+#transcriptionContent {
+    width:90%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+#soundfile_upload, #mediaFilePreview {
+    display: grid;
+    align-items: center;
+}
+
+
+input, button, label {
+    font-size: 1.175rem;
+}
+
+input[type="file"] {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+input[type="file"]::file-selector-button, button {
+    padding: 1ch;
+    transition-duration: 0.4s;
+    border-radius: 1ch;
+    border: 2px solid grey;
+}
+
+div {
+    padding: 1ch;
+}
+
+#mediaFilePreview>audio {
+    width: 75%;
+}
+
+#submit-button:enabled {
+    border-color: #04AA6D;
+    color: black;
+}
+#submit-button:enabled:hover, input[type="file"]::file-selector-button:hover {
+    background-color: #04AA6D;
+    border-color: #04AA6D;
+    color: white;
+}
+#submit-button {
+    width: 25ch;
+    border: red solid 2px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    transition-duration: 0.4s;
+}
+
+body {
+    font-family: "Source Serif 4 Variable", "Source Serif 4", "Source Serif Pro", Georgia, serif;
+    margin: 0;
+    line-height: 1.45;
+    font-size: 1.175rem;
+    --type-xxx-large: 3.05rem;
+    --type-xx-large: 2.44rem;
+    --type-x-large: 1.95rem;
+    --type-larger: 1.56rem;
+    --type-large: 1.25rem;
+    --type-regular: 1rem;
+    --type-small: 0.8rem;
+    --type-smaller: 0.64rem;
+    --type-x-small: 0.512rem;
+}
+
+
