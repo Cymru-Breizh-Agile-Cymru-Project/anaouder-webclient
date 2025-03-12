@@ -1,0 +1,10 @@
+services:
+  website:
+    image: nginx
+    container_name: anaouder-website
+    hostname: anaouder-website
+    restart: always
+    volumes:
+       - ./public:/usr/share/nginx/html
+    ports:
+       - "80:80"
