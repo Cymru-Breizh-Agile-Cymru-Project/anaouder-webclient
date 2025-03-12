@@ -113,7 +113,7 @@
             createMediaPreview("audio", GetSttApiUrl() + "/get_wav/?stt_id=" + stt_id);
 
             //
-            fetchTranscription();
+            //fetchTranscription();
 
             //
             initialiseDownloadTranscriptionsButtons();
