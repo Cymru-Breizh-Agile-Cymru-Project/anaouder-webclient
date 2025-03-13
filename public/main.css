@@ -2,24 +2,52 @@
 html, body {
     padding: 0;
     margin: 0;
-    background-color: lightsteelblue;
     background-color: #151E27;
 }
 
-main {
-    margin-top: 5ch;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: white;
+main, header, nav {
     max-width: 80ch;
     width: 80ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav {
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    list-style-type:none;
+    white-space: nowrap;
+}
+
+main {
+    background-color: white;
     padding: 2ch 5ch;
     border-radius: 5ch;
     border: 5px solid black;
 }
 
-h1 {
+header {
+    margin-top: 1ch;
+    margin-bottom: 0;
+    padding: 0;
+    color: white;
+}
+
+nav {
+    color: white;
+    align-items: center;
+}
+nav>a{
+    color: white;
+}
+
+h1, h2 {
     text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
 }
 
 #transcriptionContent {
@@ -29,7 +57,7 @@ h1 {
     overflow-y: scroll;
 }
 
-#soundfile_upload, #mediaFilePreview {
+#soundfile_upload {
     display: grid;
     align-items: center;
 }
@@ -52,9 +80,6 @@ input[type="file"]::file-selector-button, button {
     border: 2px solid grey;
 }
 
-div {
-    padding: 1ch;
-}
 
 #mediaFilePreview>audio {
     width: 75%;

@@ -29,6 +29,20 @@ function _(id) {
     return document.getElementById(id);
 }
 
+
+function getSttIDLog(){
+    let log_string = localStorage.getItem("stt_ids")
+    if (log_string == null)
+        log_string = ""
+    return log_string.split("|").filter(str => str.length > 0)
+}
+
+function addIDtoLog(stt_id){
+    let stt_ids = getSttIDLog();
+    stt_ids.push(stt_id);
+    localStorage.setItem("stt_ids", stt_ids.join("|"))
+}
+
 function activateSubmit() {
     const button = _("submit-button")
     button.disabled = false;
@@ -208,6 +222,9 @@ function uploadChunks(file) {
             if (result.success == true) {
                 var stt_id = result.id;
 
+                // Add the UUID to the logs
+                addIDtoLog(stt_id)
+                
                 let start = 0;
                 const chunkSize = 1024 * 1024; // !Mb
 

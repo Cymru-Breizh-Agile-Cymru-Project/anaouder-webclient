@@ -12,22 +12,26 @@
 </head>
 
 <body>
+<header>
+    <h1>Anaouder Web</h1>
+</header>
+<nav>
+    <a href="/">Home</a>
+    <a href="/log.html">Log</a>
+    <a href="/">About</a>
+</nav>
 <main>
-<h1>Anaouder Web</h1>
+<h2>Transcribe audio</h2>
 
 
 <div id="selectFileContainer">
     <p> A service for transcribing Breton language video or audio files</em></p>
-    
-    <br/>
     <p>
         <label for="soundfile"><strong>Choose a file</strong></label>
         <input onchange="activateSubmit()" type="file" id="soundfile" name="soundfile" />
     </p>
-
-    <br/>
-
 </div>
+
 <div id="mediaFilePreview"></div>
 <hr/>
 
