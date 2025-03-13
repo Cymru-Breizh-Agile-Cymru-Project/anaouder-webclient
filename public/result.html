@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="cy">
+
+<head>
+    <meta charset="utf-8">
+    <title>Transcribe</title>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="main.css">
+    <script src="src/js/core.js" type="text/javascript"></script>
+    <script src="src/js/result.js" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <header>
+        <h1>Anaouder Web</h1>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/log.html">Log</a>
+        <a href="/">About</a>
+    </nav>
+    <main>
+        <h2>Transcription result</h2>
+        <p>
+            This page contains the results from the transcription for the given clip (or they will appear here if
+            processing is still ongoing).
+            Please keep a copy of the link below. This is a link to get your transcriptions back. If you lose it
+            you can't get your transcription back!
+        </p>
+        <p><strong>Link: </strong><a id="sttid_value" /></p>
+
+        <hr />
+
+        <h3>Media preview:</h3>
+        <div id="mediaFilePreview"></div>
+        <hr />
+
+
+        <div id="transcribeResultsContainer">
+            <h3>Results:</h3>
+
+            <div id="transcriptionInProgressContainer" style="display: none;">
+                <button id="btnStatus" onclick="submitGetStatus()">Get Status</button>
+            </div>
+
+            <p><label for="transcriptions">Transcribe Results</label></p>
+
+            <div id="transcriptions"></div>
+
+            <div id="transriptionCompletedResultsContainer" style="display: none;">
+                <div id="transcriptionFormatButtons">
+                    <!--
+            <a id="btnDownladMp3"><button>Get mp3</button></a>
+            <a id="btnDownloadJson"><button>Get Json</button></a>
+            <a id="btnDownloadVadJson"><button>Get VAD Json</button></a>
+            <a id="btnDownloadVadCsv"><button>Get VAD CSV</button></a>
+            <a id="btnDownloadSRT"><button>Get SRT (segment=6s)</button></a>
+            <a id="btnDownloadVTT"><button>Get VTT</button></a>
+            -->
+                    <a id="btnDownloadElan"><button>Get Elan</button></a>
+                    <a id="btnDownladWav"><button>Get WAV</button></a>
+                </div>
+            </div>
+
+            <p>
+            <div id="transcriptionContent"></div>
+            </p>
+        </div>
+
+
+    </main>
+</body>
+
+</html>

@@ -19,7 +19,7 @@ function populatelog() {
         var linkText = document.createTextNode(stt_id);
         a.appendChild(linkText);
         a.title = stt_id;
-        a.href = "/?stt_id=" + stt_id;
+        a.href = "/result.html?stt_id=" + stt_id;
         let first = document.createElement("td")
         first.appendChild(a)
         row.append(first)

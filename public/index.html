@@ -1,105 +1,67 @@
 <!DOCTYPE html>
-<html lang="cy">
+<html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Transcribe</title>
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
-    <link rel="stylesheet" href="main.css"> 
+    <link rel="stylesheet" href="main.css">
+    <script src="src/js/core.js" type="text/javascript"></script>
     <script src="src/js/script.js" type="text/javascript"></script>
     <script src="src/js/audio/audioRecorder.js" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
-<header>
-    <h1>Anaouder Web</h1>
-</header>
-<nav>
-    <a href="/">Home</a>
-    <a href="/log.html">Log</a>
-    <a href="/">About</a>
-</nav>
-<main>
-<h2>Transcribe audio</h2>
+    <header>
+        <h1>Anaouder Web</h1>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/log.html">Log</a>
+        <a href="/">About</a>
+    </nav>
+    <main>
+        <h2>Transcribe audio</h2>
 
-
-<div id="selectFileContainer">
-    <p> A service for transcribing Breton language video or audio files</em></p>
-    <p>
-        <label for="soundfile"><strong>Choose a file</strong></label>
-        <input onchange="activateSubmit()" type="file" id="soundfile" name="soundfile" />
-    </p>
-</div>
-
-<div id="mediaFilePreview"></div>
-<hr/>
-
-<div id="audioDataSubmit">
-    <form id="soundfile_upload" enctype="multipart/form-data" method="POST">
-        <button disabled id="submit-button" type="button" onclick="SubmitFileForUpload()">Select file above</button>
-    </form>
-</div>
-
-<div id="uploadProgressContainer" style="display: none;">
-
-    <progress id="progressBar" value="0" max="100" style="width: 80%;" ></progress>
-
-    <p id="status"></p>
-
-</div>
-
-
-<div id="uploadStreamUploadAnimation" style="display: none;">
-    
-    <p id="loaded_n_total"></p>
-
-    <p>Please wait...</p>
-
-    <img src="upload_animation.gif" />
-
-</div>
-
-
-<div id="transcribeResultsContainer" style="display: none;">
-    
-    <h3><label for="sttid_value">Results:</label></h3>
-    <div id="sttid_value"></div>
-    <br/>
-    <div id="transcriptionInProgressContainer" style="display: none;">
-        <button id="btnStatus" onclick="submitGetStatus()">Get Status</button>
-    </div>
-
-    <p><label for="transcriptions">Transcribe Results</label></p>
-    
-    <div id="transcriptions"></div>
-
-    <div id="transriptionCompletedResultsContainer" style="display: none;">
-        <div id="transcriptionFormatButtons">
-            <!--
-            <a id="btnDownladMp3"><button>Get mp3</button></a>
-            <a id="btnDownloadJson"><button>Get Json</button></a>
-            <a id="btnDownloadVadJson"><button>Get VAD Json</button></a>
-            <a id="btnDownloadVadCsv"><button>Get VAD CSV</button></a>
-            <a id="btnDownloadSRT"><button>Get SRT (segment=6s)</button></a>
-            <a id="btnDownloadVTT"><button>Get VTT</button></a>
-            -->
-            <a id="btnDownloadElan"><button>Get Elan</button></a>
-            <a id="btnDownladWav"><button>Get WAV</button></a>
+        <div id="selectFileContainer">
+            <p> A service for transcribing Breton language video or audio files</em></p>
+            <p>
+                <label for="soundfile"><strong>Choose a file</strong></label>
+                <input onchange="activateSubmit()" type="file" id="soundfile" name="soundfile" />
+            </p>
         </div>
-    </div>
 
-    <p>
-        <div id="transcriptionContent"></div>
-    </p>
+        <div id="mediaFilePreview"></div>
+        <hr />
 
-    <script>
-        window.onload = UserInterfaceReady
-    </script>
+        <div id="audioDataSubmit">
+            <form id="soundfile_upload" enctype="multipart/form-data" method="POST">
+                <button disabled id="submit-button" type="button" onclick="SubmitFileForUpload()">Select file
+                    above</button>
+            </form>
+        </div>
 
-</div>
+        <div id="uploadProgressContainer" style="display: none;">
 
-    
-</main>
+            <progress id="progressBar" value="0" max="100" style="width: 80%;"></progress>
+
+            <p id="status"></p>
+
+        </div>
+
+
+        <div id="uploadStreamUploadAnimation" style="display: none;">
+
+            <p id="loaded_n_total"></p>
+
+            <p>Please wait...</p>
+
+            <img src="upload_animation.gif" />
+
+        </div>
+    </main>
 </body>
+
 </html>
