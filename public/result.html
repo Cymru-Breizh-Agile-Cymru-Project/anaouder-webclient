@@ -37,15 +37,14 @@
         <div id="mediaFilePreview"></div>
         <hr />
 
+        <div id="transcriptionInProgressContainer">
+            <button id="btnStatus" onclick="submitGetStatus()">Get Status</button>
+        </div>
 
-        <div id="transcribeResultsContainer">
-            <h3>Results:</h3>
+        <div id="transcribeResultsContainer" style="display: none;">
+            <h3>Transcription results</h3>
 
-            <div id="transcriptionInProgressContainer" style="display: none;">
-                <button id="btnStatus" onclick="submitGetStatus()">Get Status</button>
-            </div>
-
-            <p><label for="transcriptions">Transcribe Results</label></p>
+            <p>You can download the transcription results by choosing your desired format below.></p>
 
             <div id="transcriptions"></div>
 
@@ -53,20 +52,20 @@
                 <div id="transcriptionFormatButtons">
                     <!--
             <a id="btnDownladMp3"><button>Get mp3</button></a>
-            <a id="btnDownloadJson"><button>Get Json</button></a>
             <a id="btnDownloadVadJson"><button>Get VAD Json</button></a>
             <a id="btnDownloadVadCsv"><button>Get VAD CSV</button></a>
-            <a id="btnDownloadSRT"><button>Get SRT (segment=6s)</button></a>
             <a id="btnDownloadVTT"><button>Get VTT</button></a>
             -->
                     <a id="btnDownloadElan"><button>Get Elan</button></a>
+                    <a id="btnDownloadJson"><button>Get Json</button></a>
+                    <a id="btnDownloadSRT"><button>Get SRT</button></a>
+                    <a id="btnDownloadText"><button>Get Text</button></a>
                     <a id="btnDownladWav"><button>Get WAV</button></a>
                 </div>
             </div>
-
-            <p>
-            <div id="transcriptionContent"></div>
-            </p>
+            <hr />
+            <h3>Transcription preview:</h3>
+            <p id="transcriptionContent"></p>
         </div>
 
 

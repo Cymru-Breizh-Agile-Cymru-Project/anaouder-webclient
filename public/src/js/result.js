@@ -31,8 +31,10 @@ function UserInterfaceReady() {
     //
     initialiseDownloadTranscriptionsButtons();
 
-
+    submitGetStatus()
 }
+
+
 
 function fetchTranscription() {
     var ajax_transcription = new XMLHttpRequest();
@@ -96,22 +98,24 @@ function populateTranscription(currentTime) {
 }
 
 function submitGetStatus() {
-    var ajax = new XMLHttpRequest();
-    ajax.onload = function () {
-        if (this.readyState == 4) {
-            var result = JSON.parse(this.responseText);
-            if (result.status == "SUCCESS") {
-                _("transcriptionInProgressContainer").style.display = "none";
-                _("transcriptions").innerHTML = "";
-                initialiseDownloadTranscriptionsButtons();
-                //fetchTranscription();
-            } else {
-                _("transcriptions").innerHTML = _("transcriptions").innerHTML + this.responseText;
+    fetch(GetSttApiUrl() + "/get_status?stt_id=" + stt_id)
+        .then(res => res.json())
+        .then(out => {
+            console.log(out)
+            if(out['status'] == "Success" || out['status'] == "SUCCESS"){
+                _("transcribeResultsContainer").style.display = "block"
+                const content =  _("transcriptionContent")
+                fetch(GetSttApiUrl() + "/get_text?stt_id=" + stt_id)
+                    .then(res => res.text())
+                    .then(out => {
+                        console.log(out)
+                        content.innerHTML = out.split("\n").join("<br/>")
+                    })
+                    .catch(err => console.log(err));
+            
             }
-        }
-    }
-    ajax.open("GET", GetSttApiUrl() + "/get_status/?stt_id=" + stt_id, true);
-    ajax.send();
+        })
+        .catch(err => console.log(err));
 }
 
 function initialiseDownloadTranscriptionsButtons() {
@@ -139,6 +143,12 @@ function initialiseDownloadTranscriptionsButtons() {
     if (btnDownload_Elan) {
         btnDownload_Elan.setAttribute("href", GetSttApiUrl() + "/get_elan/?stt_id=" + stt_id);
         btnDownload_Elan.setAttribute("download", stt_id + ".eaf");
+    }
+
+    var btnDownload_Elan = _("btnDownloadText");
+    if (btnDownload_Elan) {
+        btnDownload_Elan.setAttribute("href", GetSttApiUrl() + "/get_text/?stt_id=" + stt_id);
+        btnDownload_Elan.setAttribute("download", stt_id + ".txt");
     }
 
     var btnDownload_Json = _("btnDownloadJson");
