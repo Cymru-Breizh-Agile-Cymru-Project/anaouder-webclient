@@ -98,14 +98,14 @@ function populateTranscription(currentTime) {
 }
 
 function submitGetStatus() {
-    fetch(GetSttApiUrl() + "/get_status?stt_id=" + stt_id)
+    fetch(GetSttApiUrl() + "/get_status/?stt_id=" + stt_id)
         .then(res => res.json())
         .then(out => {
             console.log(out)
             if(out['status'] == "Success" || out['status'] == "SUCCESS"){
                 _("transcribeResultsContainer").style.display = "block"
                 const content =  _("transcriptionContent")
-                fetch(GetSttApiUrl() + "/get_text?stt_id=" + stt_id)
+                fetch(GetSttApiUrl() + "/get_text/?stt_id=" + stt_id)
                     .then(res => res.text())
                     .then(out => {
                         console.log(out)
